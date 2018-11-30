@@ -10,7 +10,7 @@ module.exports = function (model) {
       if(err) throw err;
         res.render('index',{single: {},others: data2});
     });
-    model.article.remove({},function(err,info){})
+    //model.article.remove({},function(err,info){})
     //res.render('index');
   });
 
