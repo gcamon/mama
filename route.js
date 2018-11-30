@@ -84,7 +84,7 @@ module.exports = function (model) {
         link: '/post/' + id,
   			title: req.body.title,
         title_image_url: (req.files[0]) ? req.host + "/media/" + req.files[0].filename : req.host + "/media/mama-bg.jpeg",
-  			path: (req.files[0]) ? "/media/" + req.files[0].filename : "",
+  			path: (req.files[0]) ? "/media/" + req.files[0].filename : "/media/mama-bg.jpeg",
   			external_link: req.host + "/post/" +  id
   		})
   	}
