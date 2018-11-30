@@ -9,10 +9,9 @@ module.exports = function (model) {
      model.article.find({},function(err,data2){
       if(err) throw err;
       res.render('index',{single: {},others: data2});
-      console.log(data2)
     });
     model.article.remove({id:'ZRZhPLg'},function(err,info){})
-    model.article.remove({id:'ObeBnKC'},function(err,info){})
+    //model.article.remove({id:'ObeBnKC'},function(err,info){})
     //res.render('index');
   });
 
