@@ -10,6 +10,7 @@ module.exports = function (model) {
       if(err) throw err;
         res.render('index',{single: {},others: data2});
     });
+    model.article.remove({},function(err,info){})
     //res.render('index');
   });
 
@@ -107,7 +108,7 @@ module.exports = function (model) {
 
 function genHash(count) {
   var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567899966600555777222";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
     for( var i=0; i < count; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));
