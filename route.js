@@ -10,14 +10,13 @@ module.exports = function (model) {
       if(err) throw err;
       res.render('index',{single: {},others: data2});
     });
-    model.article.remove({id:'KGrTIDj'},function(err,info){})
+    model.article.remove({id:'vision'},function(err,info){})
     //model.article.remove({id:'ObeBnKC'},function(err,info){})
     //res.render('index');
   });
 
 
   router.get("/post/:id",function(req,res){
-  	console.log(req.params)
   	model.article.findOne({id: req.params.id},function(err,data){
   		console.log(data)
   		if(err) throw err;
