@@ -10,7 +10,7 @@ module.exports = function (model) {
       if(err) throw err;
       res.render('index',{single: {},others: data2});
     });
-    model.article.remove({id:'vision'},function(err,info){})
+    //model.article.remove({id:'vision'},function(err,info){})
     //model.article.remove({id:'ObeBnKC'},function(err,info){})
     //res.render('index');
   });
@@ -35,6 +35,34 @@ module.exports = function (model) {
   	})
   	
   });
+
+  router.get("/vision",function(req,res){
+    model.article.find({},function(err,data2){
+      if(err) throw err;
+      res.render('vision',{single: {},others: data2});
+    });    
+  })
+
+  router.get("/campaign",function(req,res){
+    model.article.find({},function(err,data2){
+      if(err) throw err;
+      res.render('schedule',{single: {},others: data2});
+    });    
+  })
+
+  router.get("/about",function(req,res){
+    model.article.find({},function(err,data2){
+      if(err) throw err;
+      res.render('about',{single: {},others: data2});
+    });    
+  })
+
+  router.get("/visit",function(req,res){
+    model.article.find({},function(err,data2){
+      if(err) throw err;
+      res.render('visit',{single: {},others: data2});
+    });    
+  })
 
   router.get("/article",function(req,res){
   	console.log(req.query);
