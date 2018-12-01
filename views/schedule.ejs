@@ -11,7 +11,7 @@
   <meta property="og:type"          content="Enugu south and north constituency" />
   <meta property="og:title"         content="Hon Nelson Maduka Arum visits kenneth Road" />
   <meta property="og:description"   content="MAMA 2019 For Federal House of Representative (Enugu north/south federal constituency)" />
-  <meta property="og:image"         content="http://nelsonarum.com/media/mama.bg.jpeg" />
+  <meta property="og:image"         content="http://nelsonarum.com/media/mama-bg.jpeg" />
   <meta name="description" content="Hon Nelson Arum for Federal House Of Representative (Enugu north/south federal constituency)">
 
 
@@ -19,6 +19,17 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
   <style type="text/css">
 
     body, html {
@@ -144,6 +155,10 @@
       background-color:skyBlue;
       margin: 10px 0;
     }
+
+     .image-fit {
+      height: 100%; width: 100%; object-fit: contain
+    }
     
   </style>
 
@@ -178,7 +193,7 @@
         <div class="col-md-6 col-sm-12 col-lg-6 vote-area">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12" >
-             <img src="/media/mama-bg.jpeg" alt='image'>
+             <img src="/media/mama-bg.jpeg" class="image-fit" alt='image'>
             </div>
             <div class="col-md-12 col-sm-12 col-lg-12">
                <img src="/assets/images/apc-logo.png" class="logo2">  
@@ -229,7 +244,7 @@
             <div class="col-md-7 col-sm-12 col-md-7">
               <h4 class="p-2 text-info">Watch MAMA - as cheerful as always</h4>
               <p class="p-2 font1_2">
-                 <video width="320" height="240" controls>
+                 <video class="image-fit" controls>
                  <source src="/media/mama.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -238,9 +253,9 @@
             <div class="col-md-5 col-sm-12 col-lg-5">
                <h4 class="p-2 text-info">Vision <span class="text-danger">2019</span></h4>
                <ul style="">
-                 <li><h5> <a href="">Fresh Ideas</a></h5></li>
-                 <li><h5> <a href="">Effective Representation</a></h5></li>
-                 <li><h5> <a href="">Youth Empowerment</a></h5></li>
+                 <li><h5> <a href="/vision">Fresh Ideas</a></h5></li>
+                 <li><h5> <a href="/vision">Effective Representation</a></h5></li>
+                 <li><h5> <a href="/vision">Youth Empowerment</a></h5></li>
                </ul>
             </div>   
         </div> 

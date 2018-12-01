@@ -140,6 +140,10 @@
       background-color:skyBlue;
       margin: 10px 0;
     }
+
+     .image-fit {
+      height: 100%; width: 100%; object-fit: contain
+    }
     
   </style>
 
@@ -166,7 +170,7 @@
     <section class="banner bg-white p-2">
       <div class="row">
         <div class="col-md-6 col-sm-12 col-lg-6 bg-area">
-          <img src="/assets/images/mama-bg.jpeg">
+          <img src="/assets/images/mama-bg.jpeg" class="image-fit">
         </div>
         <div class="col-md-6 col-sm-12 col-lg-6 vote-area">
            <img src="/assets/images/apc-logo.png" class="logo2">  
@@ -230,7 +234,7 @@
             </div> 
              <div class="col-md-5 col-sm-12 col-lg-5" style="text-align: center;">
                <!--<h4 class="p-2 text-info">Mama Campaign Flag Off <span class="text-danger"></span></h4>-->
-                <video width="320" height="240" controls autoplay="true">
+                <video style="width: 100%" controls autoplay="true">
                  <source src="/media/mama.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
