@@ -43,7 +43,7 @@ module.exports = function (model) {
     });    
   })
 
-  router.get("/love-of-city",function(req,res){
+  router.get("/love",function(req,res){
     model.article.find({},function(err,data2){
       if(err) throw err;
       res.render('city',{single: {},others: data2});
