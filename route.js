@@ -18,7 +18,6 @@ module.exports = function (model) {
 
   router.get("/post/:id",function(req,res){
   	model.article.findOne({id: req.params.id},function(err,data){
-  		console.log(data)
   		if(err) throw err;
   		if(data) {
         model.article.find({},function(err,data2){
@@ -77,13 +76,13 @@ module.exports = function (model) {
 
 
   router.get("/mama-2019/admin",function(req,res){
-  	console.log(req.query)
-  	if(!req.query.static){	
-  	   res.render('admin');
-  	} else {
-  	   res.render("admin2");
-  	}
-
+    model.article.find({},function(err,data){
+    	if(!req.query.static){	
+    	   res.render('admin',{others: data});
+    	} else {
+    	   res.render("admin2",{others: data});
+    	}
+    })
   });
 
   router.post("/publications",function(req,res){
@@ -133,6 +132,52 @@ module.exports = function (model) {
   
   });
 
+  router.put("/publications",function(req,res){
+
+  });
+
+  router.get("/edit/:id",function(req,res){
+    model.article.findOne({id: req.params.id},function(err,data){
+      if(err) throw err
+      if(data){
+        model.article.find({},function(err,data2){
+          res.render('edit',{edit: data, others: data2});
+        });        
+      } else {
+        res.end("error 404");
+      }
+    })
+  });
+
+  router.post("/edit/:id",function(req,res){
+    model.article.findOne({id: req.params.id},function(err,data){
+      if(err) throw err
+      if(data){
+        data.title = req.body.title;
+        data.article = req.body.article;
+        data.title_image_url = (req.files[0]) ? req.host + "/media/" + req.files[0].filename : data.title_image_url;
+        data.path = (req.files[0]) ? "/media/" + req.files[0].filename : data.path;
+        data.save(function(err,info){
+          if(err) throw err;
+          //res.json({status: true, message: "article updated!"});
+          model.article.find({},function(err,data2){
+            res.render('edit',{edit: data, others: data2});
+          });        
+        })
+      } else {
+        res.json({error: true,message:"article not found!"});
+      }
+    })
+  });
+
+ router.post("/post-delete/:id",function(req,res){
+    model.article.remove({id: req.params.id},function(err,info){
+      if(err) throw err;
+      model.article.find({},function(err,data2){
+        res.render('edit',{edit: {}, others: data2});
+      });        
+    })
+  });
 
   router.get("/media/:filename",function(req,res){
   	var file = __dirname + "/uploads/" + req.params.filename;
