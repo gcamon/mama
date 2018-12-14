@@ -45,7 +45,7 @@
     }
 
     .container {
-      width: 72%;
+      
       margin: 0 auto;
     }
 
@@ -195,7 +195,10 @@
         <div class="col-md-6 col-sm-12 col-lg-6">
           <% for(var i = 0; i < others.length; i++) { %>
           <div>
-            <b><%= others[i].title %></b> &nbsp;<a href="<%= '/edit/' + others[i].id %>" > <i class="fa fa-pencil"></i> edit</a>
+            <label><%= others[i].title %></label> &nbsp;<a href="<%= '/edit/' + others[i].id %>" > <i class="fa fa-pencil"></i> edit</a>
+             <form action="<%= '/post-delete/' + others[i].id %>" method="POST" style="display: inline-block;"> 
+             <input type="submit" value="delete" class="btn btn-neutral" style="padding: 0;border: none;">
+             </form>
           </div>
           <% } %>
         </div>
